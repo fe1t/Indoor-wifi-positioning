@@ -1,0 +1,1 @@
+create table access_point (Id int NOT NULL AUTO_INCREMENT, Date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(), X DECIMAL(10, 5), Y DECIMAL(10, 5), ESSID varchar(127),BSSID varchar(127), RSSI int, quality_level DECIMAL(4, 1), quality_total DECIMAL(4, 1),primary key (id));

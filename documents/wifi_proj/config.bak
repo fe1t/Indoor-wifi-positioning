@@ -1,0 +1,6 @@
+{
+    "host": "localhost",
+    "user": "root",
+    "password": "toor",
+    "db": "wifi_positioning"
+}
