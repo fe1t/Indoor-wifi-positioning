@@ -6,14 +6,8 @@ colorama==0.3.2
 decorator==4.0.11
 enum34==1.1.6
 Flask==0.12
-Flask-Sockets==0.2.1
-gevent==1.2.1
-gevent-websocket==0.9.5
-gmpy2==2.0.3
 greenlet==0.4.12
 html5lib==0.999
-ipython==5.2.1
-ipython-genutils==0.1.0
 itsdangerous==0.24
 Jinja2==2.9.5
 MarkupSafe==0.23
@@ -42,8 +36,5 @@ six==1.10.0
 stevedore==1.20.0
 traitlets==4.3.1
 urllib3==1.9.1
-virtualenv==15.1.0
-virtualenv-clone==0.2.6
-virtualenvwrapper==4.7.2
 wcwidth==0.1.7
 Werkzeug==0.11.15
