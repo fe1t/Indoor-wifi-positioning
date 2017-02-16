@@ -14,7 +14,7 @@ Raspberry pi 3 running on Raspbian 8.0 (jessie) OS
 2. Position (x, y) you can be found by using maps/z2f.html
 3. run 'sudo python ./calculation_numpy.py' to determine your current position
 
-> NOTE: There will be an accuracy problem: ~ 1-3 m *
+> NOTE: There will be an accuracy problem:  ~ 1-3 m
 
 
 ## References
