@@ -35,17 +35,30 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>RSSI Value / Time</h1>
+        <h1>Access Points</h1>
         <br />
-        <p class="lead">
-        {% for k, ap in aps.iteritems() %}
-            <br />
-            <h3> {{ ap[0]["essid"] }} ({{ ap[0]["bssid"] }}) </h3>
-            <div id="{{ k }}">
-            </div>
-        {% endfor %}
-            <br />
-         </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th> ESSID </th>
+      <th> BSSID </th>
+      <th> Count </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for bssid in bssid_list %}
+    <tr>
+      <th scope="row"> {{ loop.index }} </th>
+      <td>{{ bssid[2] }} </td>
+      <td>{{ bssid[1] }} </td>
+      <td>{{ bssid[0] }} </td>
+      <td> <a href="/show?bssid={{bssid[1]}}"> Link </a>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
       </div>
 
     </div><!-- /.container -->
@@ -60,22 +73,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js" crossorigin="anonymous"> </script>
     <script>
-
-{% for k, ap in aps.iteritems() %}
-    var container = document.getElementById("{{ k }}");
-    var items = [
-        {% for apinfo in ap %}
-    {x: '{{ apinfo["date"]}}', y: {{apinfo["rssi"] }} } {% if not loop.last %}, {% endif %}
-        {% endfor %}
-    ];
-
-    var dataset = new vis.DataSet(items);
-    var options = {
-        start: '2017-02-14 18:00:00',
-        end: '2017-02-16 13:00:00'
-    };
-    var graph2d = new vis.Graph2d(container, dataset, options);
-{% endfor %}
 
     </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

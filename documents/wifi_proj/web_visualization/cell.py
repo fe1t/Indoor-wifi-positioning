@@ -19,12 +19,12 @@ class CellQuery:
         self.db.commit()
         self.db.close()
 
-    def get(self):
+    def get(self, bssid):
         self.db = pymysql.connect(host=self.config['host'], user=self.config['user'], password=self.config['password'],  db=self.config['db'])
         with self.db.cursor() as cursor:
-                sql = "SELECT * FROM access_point;"
-                cursor.execute(sql)
-                rows = cursor.fetchall()
+            sql = "SELECT * FROM access_point where bssid = %s;"
+            cursor.execute(sql, (bssid, ))
+            rows = cursor.fetchall()
         out = {}
         for row in rows:
             #k = md5.new(row[5]).hexdigest()
@@ -39,6 +39,14 @@ class CellQuery:
                 })
         self.db.close()
         return out
+
+    def get_bssid_list(self):
+        self.db = pymysql.connect(host=self.config['host'], user=self.config['user'], password=self.config['password'],  db=self.config['db'])
+        with self.db.cursor() as cursor:
+            sql = "SELECT count(bssid) c, bssid, essid  FROM access_point group by bssid order by c DESC;"
+            cursor.execute(sql)
+            rows = cursor.fetchall()
+        return rows
 
 if __name__ == "__main__":
     cell = CellQuery()
