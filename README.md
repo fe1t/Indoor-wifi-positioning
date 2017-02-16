@@ -5,13 +5,11 @@ Raspberry pi 3 running on Raspbian 8.0 (jessie) OS
 
 
 ### Installation
-------
 1. run 'git clone https://github.com/fe1t/Indoor-wifi-positioning'
 2. then 'sudo sh installation_things.sh'
 
 
 ### Usage
------
 1. You need to run 'sudo python documents/wifi_positioning_rssi_normal_dist_based/main.py' to collect data.
 2. Position (x, y) you can find by using maps/z2f.html
 3. run 'sudo python ./calculation_numpy.py' to determine your current position
