@@ -11,7 +11,7 @@ Raspberry pi 3 running on Raspbian 8.0 (jessie) OS
 
 ## Usage
 1. You need to run 'sudo python documents/wifi_positioning_rssi_normal_dist_based/main.py' to collect data.
-2. Position (x, y) you can find by using maps/z2f.html
+2. Position (x, y) you can be found by using maps/z2f.html
 3. run 'sudo python ./calculation_numpy.py' to determine your current position
 
 > NOTE: There will be an accuracy problem: ~ 1-3 m *
